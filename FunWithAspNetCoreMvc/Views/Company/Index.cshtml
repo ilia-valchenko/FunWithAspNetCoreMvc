@@ -1,0 +1,16 @@
+﻿<!--This is our View in terms of MVC-->
+<!doctype html>
+<html>
+<head>
+    <!--Symbols ~ means that the application will use a special path for retrieving these styles.
+        In our case it's wwwroot-->
+    <link href="~/style.css" rel="stylesheet" />
+    <title>@ViewData["company"]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h2>Employees: @ViewData["employees"]</h2>
+    <h2>Total Salary: @ViewData["totalSalary"]</h2>
+</body>
+</html>
