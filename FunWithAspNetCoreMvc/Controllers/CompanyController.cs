@@ -33,5 +33,17 @@ namespace FunWithAspNetCoreMvc.Controllers
 
             return View(models);
         }
+
+        // GET company/get/1
+        public string Get(int id)
+        {
+            var model = new CompanyRichDomainModel
+            {
+                CompanyName = "EPAM",
+                NumberOfEmployees = 15000
+            };
+
+            return model.ToString();
+        }
     }
 }

@@ -1,0 +1,35 @@
+﻿@using FunWithAspNetCoreMvc.ViewModels
+@model GameLibraryViewModel
+<!--This is our View in terms of MVC-->
+<!doctype html>
+<html>
+<head>
+    <!--Symbols ~ means that the application will use a special path for retrieving these styles.
+        In our case it's wwwroot-->
+    <link href="~/style.css" rel="stylesheet" />
+    <title>Game library</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h2>PC games:</h2>
+
+    @foreach (var pcGame in Model.PcGames)
+    {
+        <div>
+            <h3>@pcGame.Name</h3>
+            <p>Platform: @pcGame.Platform</p>
+        </div>
+    }
+
+    <h2>Console games:</h2>
+
+    @foreach (var consoleGame in Model.ConsoleGames)
+    {
+        <div>
+            <h3>@consoleGame.Name</h3>
+            <p>Console: @consoleGame.Type</p>
+        </div>
+    }
+</body>
+</html>
