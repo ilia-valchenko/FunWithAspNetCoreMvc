@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\FunWithAspNetCoreMvc.Domain\FunWithAspNetCoreMvc.Domain.csproj" />
+    <ProjectReference Include="..\FunWithAspNetCoreMvc.Repository\FunWithAspNetCoreMvc.Repository.csproj" />
+    <ProjectReference Include="..\FunWithAspNetCoreMvc.Service\FunWithAspNetCoreMvc.Service.csproj" />
   </ItemGroup>
 
 </Project>

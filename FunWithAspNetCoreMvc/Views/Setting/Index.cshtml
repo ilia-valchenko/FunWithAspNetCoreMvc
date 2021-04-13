@@ -1,0 +1,27 @@
+﻿@using FunWithAspNetCoreMvc.Domain
+@model IEnumerable<Setting>
+<!--This is our View in terms of MVC-->
+<!doctype html>
+<html>
+<head>
+    <!--Symbols ~ means that the application will use a special path for retrieving these styles.
+        In our case it's wwwroot-->
+    <link href="~/style.css" rel="stylesheet" />
+    <title>Settings</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+    <div class="container">
+        <p>Id: @item.Id</p>
+        <p>Code: @item.Code</p>
+        <p>DefaultValue: @item.DefaultValue</p>
+        <p>CustomValue: @item.CustomValue</p>
+        <p>LastModifiedBy: @item.LastModifiedBy</p>
+        <p>LastModifiedDateTime: @item.LastModifiedDateTime</p>
+    </div>
+    }
+</body>
+</html>
