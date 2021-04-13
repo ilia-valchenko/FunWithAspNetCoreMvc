@@ -1,4 +1,6 @@
-﻿using FunWithAspNetCoreMvc.Models;
+﻿using System;
+using System.Text;
+using FunWithAspNetCoreMvc.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FunWithAspNetCoreMvc.Controllers
@@ -29,6 +31,19 @@ namespace FunWithAspNetCoreMvc.Controllers
         public string ProceedResult2(User user)
         {
             return $"EXAMPLE #2. Firstname: {user.FirstName}, Lastname: {user.LastName}, Age: {user.Age}.";
+        }
+
+        // EXAMPLE #3
+        public string ProceedResult3(User[] users)
+        {
+            var strBuilder = new StringBuilder("EXAMPLE #3" + Environment.NewLine);
+
+            foreach (var user in users)
+            {
+                strBuilder.AppendLine($"Firstname: {user.FirstName}, Lastname: {user.LastName}, Age: {user.Age}.");
+            }
+
+            return strBuilder.ToString();
         }
     }
 }
