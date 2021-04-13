@@ -13,7 +13,7 @@ namespace FunWithAspNetCoreMvc.Controllers
         }
 
         // EXAMPLE #1: The action parameters names should match HTML input names.
-        public string ProceedResult(string firstname, string lastname, int age)
+        public string ProceedResult1(string firstname, string lastname, int age)
         {
             var user = new User
             {
@@ -22,7 +22,13 @@ namespace FunWithAspNetCoreMvc.Controllers
                 Age = age
             };
 
-            return $"Firstname: {user.FirstName}, Lastname: {user.LastName}, Age: {user.Age}.";
+            return $"EXAMPLE #1. Firstname: {user.FirstName}, Lastname: {user.LastName}, Age: {user.Age}.";
+        }
+
+        // EXAMPLE #2: The properties names should match HTML input names.
+        public string ProceedResult2(User user)
+        {
+            return $"EXAMPLE #2. Firstname: {user.FirstName}, Lastname: {user.LastName}, Age: {user.Age}.";
         }
     }
 }
