@@ -1,3 +1,5 @@
+using FunWithAspNetCoreMvc.Repository;
+using FunWithAspNetCoreMvc.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +38,10 @@ namespace FunWithAspNetCoreMvc
             // * .AddCacheTagHelper()
             // * .AddViews()
             // * .AddRazorViewEngine()
+
+            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<ISettingService, SettingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
