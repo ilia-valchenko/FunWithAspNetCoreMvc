@@ -17,5 +17,11 @@ namespace FunWithAspNetCoreMvc.Controllers
         {
             return View(await this.service.GetAsync());
         }
+
+        // The action below was added only for testing purposes.
+        public IActionResult TestRazor()
+        {
+            return View();
+        }
     }
 }

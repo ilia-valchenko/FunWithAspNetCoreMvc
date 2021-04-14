@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Razor code examples</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <h2>Example #1</h2>
+        <p>Date: @DateTime.Now.ToLongDateString()</p>
+        <p>Calculation: @(2+2)</p>
+        <!--Escape single @@ symbol-->
+        <p>@@DateTime.Now = @DateTime.Now.ToLongDateString()</p>
+    </div>
+
+    <div>
+        <h2>Example #2 - Variable declaration</h2>
+        @{
+            string text = "Hello World!";
+            text += text;
+        }
+        <h3>@text</h3>
+    </div>
+
+    <div>
+        <h2>Example #3 - Conditional constructions</h2>
+        @{
+            string content = "Hello World!";
+            content += " Welcome to our web site!";
+            bool isEnabled = false;
+        }
+
+        @if (isEnabled)
+        {
+            <p>@content</p>
+        }
+        else
+        {
+            <p>The greeting is forbiden.</p>
+        }
+
+        @{
+            int variable = 0;
+        }
+
+        @switch (variable)
+        {
+            case 0:
+                <p>@variable</p>
+                break;
+            case 1:
+                <p>@(variable + variable)</p>
+                break;
+        }
+    </div>
+
+    <div>
+        <h2>Example #4 - Cycles</h2>
+        
+        @for (int i = 0; i < 5; i++)
+        {
+            <p>Iteration: @i</p>
+        }
+    </div>
+</body>
+</html>
