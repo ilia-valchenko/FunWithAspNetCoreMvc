@@ -57,11 +57,49 @@
 
     <div>
         <h2>Example #4 - Cycles</h2>
-        
+
         @for (int i = 0; i < 5; i++)
         {
             <p>Iteration: @i</p>
         }
+    </div>
+
+    <div>
+        <h2>Example #5 - try/catch/finally</h2>
+
+        @try
+        {
+            throw new InvalidOperationException("Something went wrong!");
+        }
+        catch (Exception ex)
+        {
+            <p>Exception message: @ex.Message</p>
+        }
+        finally
+        {
+            <p>Finally block</p>
+        }
+    </div>
+
+    <div>
+        <h2>Example #5 - Functions</h2>
+
+        @functions
+        {
+            public int GetFactorial(int n)
+            {
+                int result = 1;
+
+                for (int i = 1; i <= n; i++)
+                {
+                    result *= i;
+                }
+
+                return result;
+            }
+        }
+
+        <p>Factorial of number 10 is: @GetFactorial(10)</p>
     </div>
 </body>
 </html>
