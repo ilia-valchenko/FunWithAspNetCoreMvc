@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using FunWithAspNetCoreMvc.Service;
+using FunWithAspNetCoreMvc.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FunWithAspNetCoreMvc.Controllers
@@ -20,6 +20,12 @@ namespace FunWithAspNetCoreMvc.Controllers
 
         // The action below was added only for testing purposes.
         public IActionResult TestRazor()
+        {
+            return View();
+        }
+
+        // The action below was added only for testing purposes.
+        public IActionResult TestRazorDependencyInjection()
         {
             return View();
         }

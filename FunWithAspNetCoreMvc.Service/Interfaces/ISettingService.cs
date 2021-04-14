@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using FunWithAspNetCoreMvc.Domain;
 
-namespace FunWithAspNetCoreMvc.Service
+namespace FunWithAspNetCoreMvc.Service.Interfaces
 {
     public interface ISettingService
     {

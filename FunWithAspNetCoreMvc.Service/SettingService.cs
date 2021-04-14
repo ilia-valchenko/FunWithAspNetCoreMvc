@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using FunWithAspNetCoreMvc.Domain;
 using FunWithAspNetCoreMvc.Repository;
+using FunWithAspNetCoreMvc.Service.Interfaces;
 
 namespace FunWithAspNetCoreMvc.Service
 {
