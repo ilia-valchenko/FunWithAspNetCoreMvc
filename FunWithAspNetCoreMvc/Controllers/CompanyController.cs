@@ -15,9 +15,15 @@ namespace FunWithAspNetCoreMvc.Controllers
                 AverageSalaryAmount = 5000
             };
 
+            // Internally ViewBag properties are stored as name/value pairs in the ViewData dictionary.
+            // ViewData["Foo"] ---> It requires type casting for complex data types and checks for null values to avoid errors.
+            // ViewBag.Foo ---> It doesn’t require type casting for complex data types.
+            // The most notable difference is ViewData is a strongly typed dictionary while ViewBag is a dynamic type.
             ViewData["totalSalary"] = model.NumberOfEmployees * model.AverageSalaryAmount;
             ViewData["company"] = model.CompanyName;
             ViewData["employees"] = model.NumberOfEmployees;
+
+            ViewBag.TestNumber = 111;
 
             return View();
         }

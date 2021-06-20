@@ -2,6 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+    string headerText = "Hello, dear user!";
+    headerText += " And welcome to our Web Site!";
+    bool isEnabled = true;
+}
+
+@functions
+{
+    public int GetErrorCode()
+    {
+        return 82900;
+    }
+}
+
+@if (isEnabled)
+{
+    <h2>@headerText</h2>
+    <div>
+        @Html.Partial("_TestPartialView")
+    </div>
+}
+else
+{
+    <p>The greeting is forbiden. We're sorry about it.</p>
+    <p>Error code: @GetErrorCode()</p>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
