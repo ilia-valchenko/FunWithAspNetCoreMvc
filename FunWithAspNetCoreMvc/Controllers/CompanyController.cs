@@ -28,6 +28,8 @@ namespace FunWithAspNetCoreMvc.Controllers
             return View();
         }
 
+        // The attribute below allows us to override the name of an action.
+        [ActionName("GetAllCompanies")]
         public IActionResult GetAll()
         {
             var models = new List<CompanyPlainModel>()
